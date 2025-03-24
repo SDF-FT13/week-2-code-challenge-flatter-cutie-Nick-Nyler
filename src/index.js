@@ -17,4 +17,8 @@ fetch("http://localhost:3000/characters")
             characterBar.appendChild(span);
         });
 
-   
+    const mrCute = characters.find((character) => character.name === "Mr. Cute");
+    if (mrCute) {
+        displayCharacterDetails(mrCute);
+    }
+});
