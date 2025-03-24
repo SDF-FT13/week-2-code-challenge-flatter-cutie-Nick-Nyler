@@ -22,3 +22,13 @@ fetch("http://localhost:3000/characters")
         displayCharacterDetails(mrCute);
     }
 });
+function displayCharacterDetails(character) {
+    const nameElement = document.getElementById("name");
+    const imageElement = document.getElementById("image");
+    const voteCountElement = document.getElementById("vote-count");
+
+nameElement.textContent = character.name;
+imageElement.src = character.image;
+imageElement.alt = character.name;
+voteCountElement.textContent = character.votes;
+
