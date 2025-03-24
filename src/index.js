@@ -40,4 +40,14 @@ voteForm.onsubmit = (event) => {
         character.votes += additionalVotes;
         voteCountElement.textContent = character.votes;
 
-       
+        fetch(`http://localhost:3000/characters/${character.id}`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ votes: character.votes }),
+        });
+    }
+    votesInput.value = "";
+};
+
