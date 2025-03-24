@@ -32,3 +32,12 @@ imageElement.src = character.image;
 imageElement.alt = character.name;
 voteCountElement.textContent = character.votes;
 
+voteForm.onsubmit = (event) => {
+    event.preventDefault();
+    const votesInput = document.getElementById("votes");
+    const additionalVotes = parseInt(votesInput.value, 10);
+    if (!isNaN(additionalVotes)) {
+        character.votes += additionalVotes;
+        voteCountElement.textContent = character.votes;
+
+       
