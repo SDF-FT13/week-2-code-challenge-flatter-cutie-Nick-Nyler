@@ -51,3 +51,8 @@ voteForm.onsubmit = (event) => {
     votesInput.value = "";
 };
 
+resetButton.onclick = () => {
+    character.votes = 0;
+    voteCountElement.textContent = character.votes;
+
+   
